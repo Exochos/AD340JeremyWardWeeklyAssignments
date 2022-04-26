@@ -1,7 +1,11 @@
 <resources>
     <string name="app_name">AD340JeremyWardWeeklyAssignments</string>
-    <string name="hello_world">Hello World!</string>
-    <string name="last_name">Ward</string>
-    <string name="first_name">Jeremy</string>
-    <string name="date">04/12/2022</string>
+    <string name="personal">Jeremy Ward 04/20/22</string>
+    <string name="button1">Submit</string>
+    <string name="formLabel">Dating App</string>
+    <string name="signupLabel"><u>Sign up:</u></string>
+    <string name="pickTime">Date of Birth</string>
+    <string name="name">Input your name</string>
+    <string name="emailL">Input your email address </string>
+    <string name="username">Input your username</string>
 </resources>

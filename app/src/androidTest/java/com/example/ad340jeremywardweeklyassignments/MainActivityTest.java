@@ -25,7 +25,7 @@ public class MainActivityTest {
 
     @Test
     public void hasTextOnScreen() {
-        onView(withId(R.id.helloworld))
-                .check(matches(withText(R.string.hello_world)));
+        onView(withId(R.id.personal))
+                .check(matches(withText(R.string.personal)));
     }
 }

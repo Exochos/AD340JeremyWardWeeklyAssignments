@@ -28,7 +28,6 @@ public class MainActivity extends AppCompatActivity {
 
     public void goToNextActivity(View view) {
         Intent intent = new Intent();
-        intent.putExtra(Constant.KEY_NAME, "Test Value");
         intent.putExtra(String.valueOf(nameField), "New Name");
         startActivity(intent);
     }

@@ -63,7 +63,6 @@
         android:padding="10dp"
         android:textSize="40sp"
         android:textColor="@android:color/black"
-        android:FontWeight="700"
         android:background="#99c"
         android:fontFamily="sans-serif-medium"
     />

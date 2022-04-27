@@ -19,7 +19,8 @@ import org.junit.runners.JUnit4;
 @RunWith(AndroidJUnit4.class)
 public class MainActivityTest {
 
-    @Rule
-    public ActivityScenarioRule<MainActivity> activitytestRule
-            = new ActivityScenarioRule<>(MainActivity.class);
+    @Test
+    public void addition_isCorrect() {
+        assertEquals(4, 2 + 2);
+    }
 }

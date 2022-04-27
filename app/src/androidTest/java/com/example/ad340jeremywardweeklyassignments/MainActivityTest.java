@@ -18,7 +18,6 @@ import org.junit.runner.RunWith;
 import org.junit.runners.JUnit4;
 @RunWith(AndroidJUnit4.class)
 public class MainActivityTest {
-
     @Test
     public void addition_isCorrect() {
         assertEquals(4, 2 + 2);

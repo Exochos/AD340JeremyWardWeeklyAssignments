@@ -22,8 +22,4 @@ public class MainActivityTest {
     @Rule
     public ActivityScenarioRule<MainActivity> activitytestRule
             = new ActivityScenarioRule<>(MainActivity.class);
-
-    @Test
-    public void hasTextOnScreen() {
-    }
 }

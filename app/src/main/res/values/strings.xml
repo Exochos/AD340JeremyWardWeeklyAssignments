@@ -8,4 +8,6 @@
     <string name="name">Input your name</string>
     <string name="emailL">Input your email address </string>
     <string name="username">Input your username</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>

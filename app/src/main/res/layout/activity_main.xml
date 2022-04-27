@@ -61,7 +61,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         android:padding="10dp"
-        android:textSize="40sp"
+        android:textSize="34sp"
         android:textColor="@android:color/black"
         android:background="#99c"
         android:fontFamily="sans-serif-medium"

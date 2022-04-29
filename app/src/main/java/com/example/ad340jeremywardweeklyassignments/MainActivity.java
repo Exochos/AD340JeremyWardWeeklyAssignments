@@ -1,16 +1,27 @@
 package com.example.ad340jeremywardweeklyassignments;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.fragment.app.DialogFragment;
 
+import android.app.DatePickerDialog;
+import android.app.Dialog;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.view.Window;
+import android.view.WindowManager;
+import android.widget.Button;
+import android.widget.DatePicker;
 import android.widget.EditText;
 import android.widget.TextView;
+import android.view.View.OnClickListener;
+
+import java.util.Calendar;
 
 public class MainActivity extends AppCompatActivity {
+    Button button;
 
-    private EditText nameField = (EditText) findViewById(R.id.name);
+    private EditText nameField;
     private EditText emailAddressField;
     private EditText usernameField;
     private EditText descriptionField;
@@ -24,11 +35,35 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        button = (Button)findViewById(R.id.goToAnotherActivity);
+        button.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent myIntent = new Intent(MainActivity.this, SecondActivity.class);
+                MainActivity.this.startActivity(myIntent);
+            }
+        });
     }
+    public static class DatePickerFragment extends DialogFragment
+            implements DatePickerDialog.OnDateSetListener {
 
-    public void goToNextActivity(View view) {
-        Intent intent = new Intent();
-        intent.putExtra(String.valueOf(nameField), "New Name");
-        startActivity(intent);
+        @Override
+        public Dialog onCreateDialog(Bundle savedInstanceState) {
+            // Use the current date as the default date in the picker
+            final Calendar c = Calendar.getInstance();
+            int year = c.get(Calendar.YEAR);
+            int month = c.get(Calendar.MONTH);
+            int day = c.get(Calendar.DAY_OF_MONTH);
+
+            return new DatePickerDialog(getActivity(), this, year, month, day);
+        }
+
+        public void onDateSet(DatePicker view, int year, int month, int day) {
+            // TODO
+        }
+    }
+    public void showDatePickerDialog(View v) {
+        DialogFragment newFragment = new DatePickerFragment();
+        newFragment.show(getSupportFragmentManager(), "datePicker");
     }
 }

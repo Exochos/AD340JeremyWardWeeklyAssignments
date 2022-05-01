@@ -5,9 +5,8 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".MainActivity">
-
     <EditText
-        android:id="@+id/name"
+        android:id="@+id/nameField"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:hint="@string/name"
@@ -16,13 +15,12 @@
         app:layout_constraintStart_toStartOf="@id/signup"
         android:layout_marginTop="2pt"
         android:padding="5pt" />
-
     <EditText
         android:id="@+id/email"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:hint="@string/emailHint"
-        app:layout_constraintTop_toBottomOf="@id/name"
+        app:layout_constraintTop_toBottomOf="@id/nameField"
         app:layout_constraintEnd_toEndOf="@id/signup"
         app:layout_constraintStart_toStartOf="@id/signup"
         android:layout_marginTop="2pt"
@@ -39,6 +37,7 @@
         android:layout_marginTop="2pt"
         android:padding="5pt" />
     <Button
+        android:id="@+id/dateOfBirth"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/pickTime"
@@ -50,6 +49,38 @@
         android:textColor="@android:color/black"
         android:padding="5pt"
         />
+    <EditText
+        android:id="@+id/occupation"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:hint="@string/occupationHint"
+        app:layout_constraintTop_toBottomOf="@id/dateOfBirth"
+        app:layout_constraintEnd_toEndOf="@id/signup"
+        app:layout_constraintStart_toStartOf="@id/signup"
+        android:layout_marginTop="2pt"
+        android:padding="5pt" />
+    <EditText
+        android:id="@+id/location"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:hint="@string/locationHint"
+        app:layout_constraintTop_toBottomOf="@id/occupation"
+        app:layout_constraintEnd_toEndOf="@id/signup"
+        app:layout_constraintStart_toStartOf="@id/signup"
+        android:layout_marginTop="2pt"
+        android:padding="5pt" />
+    <EditText
+        android:id="@+id/description"
+        android:layout_width="wrap_content"
+        android:layout_height="160dp"
+        android:hint="@string/descHint"
+        app:layout_constraintTop_toBottomOf="@id/location"
+        app:layout_constraintEnd_toEndOf="@id/signup"
+        app:layout_constraintStart_toStartOf="@id/signup"
+        android:layout_marginTop="2pt"
+        android:padding="5pt" />
+
+
 
 
     <TextView

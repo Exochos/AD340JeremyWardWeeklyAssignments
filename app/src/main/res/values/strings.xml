@@ -5,9 +5,17 @@
     <string name="formLabel">Yet Another Dating App</string>
     <string name="signupLabel"><u>Sign up:</u></string>
     <string name="pickTime">Date of Birth</string>
-    <string name="name">Input your name</string>
-    <string name="emailHint">Input your email address </string>
+    <string name="name">Input your full name</string>
+    <string name="emailHint">Input your email address</string>
     <string name="username">Input your username</string>
+    <string name="fullname">Joy ii</string>
+    <string name="match">Match!</string>
+    <string name="back">Back</string>
+    <string name="occupationHint">Enter your occupation</string>
+    <string name="locationHint">Enter your location</string>
+    <string name="descHint">Please enter a brief description about yourself</string>
+    <string name="imageName">Image of Pup</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="myNameView">nameTest</string>
 </resources>

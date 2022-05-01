@@ -35,12 +35,19 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        nameField = findViewById(R.id.nameField);
+
+
         button = (Button)findViewById(R.id.goToAnotherActivity);
         button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent myIntent = new Intent(MainActivity.this, SecondActivity.class);
-                MainActivity.this.startActivity(myIntent);
+                 String name = nameField.getText().toString();
+
+                Intent intent = new Intent(MainActivity.this, SecondActivity.class);
+                intent.putExtra(Constants.USERNAME_KEY, name);
+                MainActivity.this.startActivity(intent);
             }
         });
     }

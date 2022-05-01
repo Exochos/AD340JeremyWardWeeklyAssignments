@@ -5,14 +5,22 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.TextView;
 
 public class SecondActivity extends Activity {
     Button button;
-
+    String name;
 
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        Bundle extras = getIntent().getExtras();
+        if (extras != null) {
+            name = extras.getString(Constants.USERNAME_KEY);
+        }
+
         setContentView(R.layout.activity_second);
+        TextView textView =  findViewById(R.id.nameView);
+        textView.setText(name);
         button = (Button)findViewById(R.id.goToAnotherActivity);
         button.setOnClickListener(new View.OnClickListener() {
             @Override

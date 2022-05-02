@@ -37,6 +37,10 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         nameField = findViewById(R.id.nameField);
+        emailAddressField = findViewById(R.id.email);
+        usernameField = findViewById(R.id.username);
+        occupationField = findViewById(R.id.occupation);
+        descriptionField = findViewById(R.id.description);
 
 
         button = (Button)findViewById(R.id.goToAnotherActivity);
@@ -44,9 +48,17 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                  String name = nameField.getText().toString();
+                 String emailAddress = emailAddressField.getText().toString();
+                 String userName = usernameField.getText().toString();
+                 String occupation = occupationField.getText().toString();
+                 String desc = descriptionField.getText().toString();
 
                 Intent intent = new Intent(MainActivity.this, SecondActivity.class);
-                intent.putExtra(Constants.USERNAME_KEY, name);
+                intent.putExtra(Constants.NAME_KEY, name);
+                intent.putExtra(Constants.EMAIL_KEY, emailAddress);
+                intent.putExtra(Constants.USERNAME_KEY, userName);
+                intent.putExtra(Constants.OCCUPATION_KEY, occupation);
+                intent.putExtra(Constants.DESCRIPTION_KEY, desc);
                 MainActivity.this.startActivity(intent);
             }
         });

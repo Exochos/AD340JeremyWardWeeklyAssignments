@@ -42,13 +42,14 @@
             android:padding="10dp" />
 
         <TextView
+            android:id="@+id/emailView"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="age"
             android:layout_gravity="center"
             android:gravity="center"
             android:padding="10dp" />
         <TextView
+            android:id="@+id/occupationView"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="occupation"
@@ -56,6 +57,7 @@
             android:gravity="center"
             android:padding="10dp" />
         <TextView
+            android:id="@+id/locationView"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="location"
@@ -63,6 +65,15 @@
             android:gravity="center"
             android:padding="10dp" />
         <TextView
+            android:id="@+id/usernameView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Username"
+            android:layout_gravity="center"
+            android:gravity="center"
+            android:padding="10dp" />
+        <TextView
+            android:id="@+id/descriptionView"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="description"

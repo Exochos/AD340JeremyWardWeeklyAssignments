@@ -3,6 +3,7 @@ package com.example.ad340jeremywardweeklyassignments;
 import static androidx.test.espresso.Espresso.onView;
 import static androidx.test.espresso.action.ViewActions.click;
 import static androidx.test.espresso.action.ViewActions.replaceText;
+import static androidx.test.espresso.assertion.ViewAssertions.doesNotExist;
 import static androidx.test.espresso.assertion.ViewAssertions.matches;
 import static androidx.test.espresso.matcher.ViewMatchers.withId;
 import static androidx.test.espresso.matcher.ViewMatchers.withText;
@@ -40,5 +41,29 @@ public class MainActivityTest {
 
         onView(withId(R.id.nameView))
                 .check(matches(withText("Jeremy Ward")));
+        onView(withId(R.id.emailView))
+                .check(matches(withText("foo@bar.com")));
+        onView(withId(R.id.usernameView))
+                .check(matches(withText("jward")));
+        onView(withId(R.id.occupationView))
+                .check(matches(withText("Software Engineer")));
+        onView(withId(R.id.locationField))
+                .check(matches(withText("Seattle")));
+        onView(withId(R.id.descriptionView))
+                .check(matches(withText("This is a description text")));
     }
+
+    @Test
+    public void cannotGoThroughFormWithMissingName() {
+        onView(withId(R.id.emailField)).perform(replaceText("foo@bar.com"));
+        onView(withId(R.id.usernameField)).perform(replaceText("jward"));
+        onView(withId(R.id.occupationField)).perform(replaceText("Software Engineer"));
+        onView(withId(R.id.locationField)).perform((replaceText("Seattle")));
+        onView(withId(R.id.descriptionField)).perform(replaceText("This is a description text"));
+
+        onView(withId(R.id.goToAnotherActivity)).perform(click());
+
+        onView(withText("Jeremy Ward")).check(doesNotExist());
     }
+
+}

@@ -58,12 +58,25 @@ public class MainActivityTest {
         onView(withId(R.id.emailField)).perform(replaceText("foo@bar.com"));
         onView(withId(R.id.usernameField)).perform(replaceText("jward"));
         onView(withId(R.id.occupationField)).perform(replaceText("Software Engineer"));
-        onView(withId(R.id.locationField)).perform((replaceText("Seattle")));
+        onView(withId(R.id.locationField)).perform((replaceText("")));
         onView(withId(R.id.descriptionField)).perform(replaceText("This is a description text"));
 
         onView(withId(R.id.goToAnotherActivity)).perform(click());
 
         onView(withText("Jeremy Ward")).check(doesNotExist());
+    }
+
+    @Test
+    public void cannotGoThroughFormWithMissingUserName() {
+        onView(withId(R.id.nameField)).perform(replaceText("Jeremy Ward"));
+        onView(withId(R.id.emailField)).perform(replaceText("foo@bar.com"));
+        onView(withId(R.id.occupationField)).perform(replaceText("Software Engineer"));
+        onView(withId(R.id.locationField)).perform((replaceText("")));
+        onView(withId(R.id.descriptionField)).perform(replaceText("This is a description text"));
+
+        onView(withId(R.id.goToAnotherActivity)).perform(click());
+
+        onView(withText("jward")).check(doesNotExist());
     }
 
 }

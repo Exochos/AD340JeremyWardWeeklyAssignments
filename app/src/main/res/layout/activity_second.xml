@@ -57,7 +57,7 @@
             android:gravity="center"
             android:padding="10dp" />
         <TextView
-            android:id="@+id/locationView"
+            android:id="@+id/locationField"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="location"

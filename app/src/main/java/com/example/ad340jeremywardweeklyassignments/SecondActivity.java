@@ -9,7 +9,7 @@ import android.widget.TextView;
 
 public class SecondActivity extends Activity {
     Button button;
-    String name, email, username, occupation, desc;
+    String name, email, username, location, occupation, desc;
 
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -18,7 +18,7 @@ public class SecondActivity extends Activity {
             name = extras.getString(Constants.NAME_KEY);
             email = extras.getString(Constants.EMAIL_KEY);
             username = extras.getString(Constants.USERNAME_KEY);
-            location = extras.getString(Constants.)
+            location = extras.getString(Constants.LOCATION_KEY);
             occupation = extras.getString(Constants.OCCUPATION_KEY);
             desc = extras.getString(Constants.DESCRIPTION_KEY);
         }
@@ -30,6 +30,8 @@ public class SecondActivity extends Activity {
         emailView.setText(email);
         TextView userName = findViewById(R.id.usernameView);
         userName.setText(username);
+        TextView locationView = findViewById(R.id.locationField);
+        locationView.setText(location);
         TextView occupationView = findViewById(R.id.occupationView);
         occupationView.setText(occupation);
         TextView descriptionView = findViewById(R.id.descriptionView);

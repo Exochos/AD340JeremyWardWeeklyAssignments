@@ -8,13 +8,10 @@ import android.app.Dialog;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
-import android.view.Window;
-import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.DatePicker;
 import android.widget.EditText;
 import android.widget.TextView;
-import android.view.View.OnClickListener;
 import android.widget.Toast;
 
 import java.util.Calendar;
@@ -39,11 +36,11 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         nameField = findViewById(R.id.nameField);
-        emailAddressField = findViewById(R.id.email);
-        usernameField = findViewById(R.id.username);
-        locationField = findViewById(R.id.location);
-        occupationField = findViewById(R.id.occupation);
-        descriptionField = findViewById(R.id.description);
+        emailAddressField = findViewById(R.id.emailField);
+        usernameField = findViewById(R.id.usernameField);
+        locationField = findViewById(R.id.locationField);
+        occupationField = findViewById(R.id.occupationField);
+        descriptionField = findViewById(R.id.descriptionField);
 
 
         button = (Button)findViewById(R.id.goToAnotherActivity);
@@ -80,11 +77,13 @@ public class MainActivity extends AppCompatActivity {
 
         @Override
         public Dialog onCreateDialog(Bundle savedInstanceState) {
+
             // Use the current date as the default date in the picker
             final Calendar c = Calendar.getInstance();
             int year = c.get(Calendar.YEAR);
             int month = c.get(Calendar.MONTH);
             int day = c.get(Calendar.DAY_OF_MONTH);
+
 
             return new DatePickerDialog(getActivity(), this, year, month, day);
         }

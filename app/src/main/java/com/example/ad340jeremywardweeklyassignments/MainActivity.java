@@ -15,6 +15,7 @@ import android.widget.DatePicker;
 import android.widget.EditText;
 import android.widget.TextView;
 import android.view.View.OnClickListener;
+import android.widget.Toast;
 
 import java.util.Calendar;
 
@@ -24,8 +25,9 @@ public class MainActivity extends AppCompatActivity {
     private EditText nameField;
     private EditText emailAddressField;
     private EditText usernameField;
-    private EditText descriptionField;
+    private EditText locationField;
     private EditText occupationField;
+    private EditText descriptionField;
     private TextView dobTextView;
     private int dobYear = 0;
     private int dobMonth = 0;
@@ -39,6 +41,7 @@ public class MainActivity extends AppCompatActivity {
         nameField = findViewById(R.id.nameField);
         emailAddressField = findViewById(R.id.email);
         usernameField = findViewById(R.id.username);
+        locationField = findViewById(R.id.location);
         occupationField = findViewById(R.id.occupation);
         descriptionField = findViewById(R.id.description);
 
@@ -48,18 +51,27 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                  String name = nameField.getText().toString();
-                 String emailAddress = emailAddressField.getText().toString();
+                 String email = emailAddressField.getText().toString();
                  String userName = usernameField.getText().toString();
+                 String  location = locationField.getText().toString();
                  String occupation = occupationField.getText().toString();
                  String desc = descriptionField.getText().toString();
 
-                Intent intent = new Intent(MainActivity.this, SecondActivity.class);
-                intent.putExtra(Constants.NAME_KEY, name);
-                intent.putExtra(Constants.EMAIL_KEY, emailAddress);
-                intent.putExtra(Constants.USERNAME_KEY, userName);
-                intent.putExtra(Constants.OCCUPATION_KEY, occupation);
-                intent.putExtra(Constants.DESCRIPTION_KEY, desc);
-                MainActivity.this.startActivity(intent);
+                 if (name.equals("") || email.equals("") || userName.equals("") || occupation.equals("")
+                     || desc.equals("")) {
+                     Toast.makeText(getApplicationContext(), getString(R.string.bad_data),
+                             Toast.LENGTH_LONG).show();
+                 }
+                 else {
+                     Intent intent = new Intent(MainActivity.this, SecondActivity.class);
+                     intent.putExtra(Constants.NAME_KEY, name);
+                     intent.putExtra(Constants.EMAIL_KEY, email);
+                     intent.putExtra(Constants.USERNAME_KEY, userName);
+                     intent.putExtra(Constants.LOCATION_KEY, location);
+                     intent.putExtra(Constants.OCCUPATION_KEY, occupation);
+                     intent.putExtra(Constants.DESCRIPTION_KEY, desc);
+                     MainActivity.this.startActivity(intent);
+                 }
             }
         });
     }

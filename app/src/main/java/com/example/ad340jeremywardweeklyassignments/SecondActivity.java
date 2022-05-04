@@ -18,6 +18,7 @@ public class SecondActivity extends Activity {
             name = extras.getString(Constants.NAME_KEY);
             email = extras.getString(Constants.EMAIL_KEY);
             username = extras.getString(Constants.USERNAME_KEY);
+            location = extras.getString(Constants.)
             occupation = extras.getString(Constants.OCCUPATION_KEY);
             desc = extras.getString(Constants.DESCRIPTION_KEY);
         }
@@ -31,6 +32,8 @@ public class SecondActivity extends Activity {
         userName.setText(username);
         TextView occupationView = findViewById(R.id.occupationView);
         occupationView.setText(occupation);
+        TextView descriptionView = findViewById(R.id.descriptionView);
+        descriptionView.setText(desc);
 
         button = (Button)findViewById(R.id.goToAnotherActivity);
         button.setOnClickListener(new View.OnClickListener() {
